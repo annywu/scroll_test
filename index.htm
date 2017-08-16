@@ -516,7 +516,7 @@
 						pagination: '.swiper-pagination',
 						paginationClickable: true,
 						centeredSlides: true,
-						// autoplay: 2500,
+						autoplay: 2500,
 						// autoplayDisableOnInteraction: false
 					});
 				</script>
@@ -556,7 +556,6 @@
 					</div>
 					<div class="title">
 						查看附近门店，提货售后更方便！
-
 					</div>
 					<a href="near_shop.aspx.htm" tppabs="http://m.lenwin.cn/near_shop.aspx" class="more">进入>>></a>
 				</div>
@@ -1053,6 +1052,21 @@
 						document.addEventListener( 'touchmove', function( e ){
 					        e.returnValue = true;
 					    }, false );
+
+						function close(){
+							$('.mask').hide()
+					    	$('.modal').hide()
+					    	document.addEventListener( 'touchmove', function( e ){
+						        e.returnValue = true;
+						    }, false );
+						    $('body').css({'overflow':'auto','position':'unset'})
+						}
+					    $('.mask').click(function(event) {
+					    	close()
+					    });
+					    $('#modal header').click(function(event) {
+					    	close()
+					    });
 					</script>
 					<footer>
 						<a href="#" class="more"><span>查看更多宝贝</span></a>
