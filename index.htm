@@ -1036,23 +1036,24 @@
 						}
 					</style>
 					<script type="text/javascript">
+ 						document.addEventListener('touchmove', function(e) {
+						 	e.preventDefault();
+						 }, false);
 						var myScroll;
 						function loaded() {
 							myScroll = new iScroll('scrollc');
+							myScroll
 						}
 						// var home=document.getElementById('home')
 						// home.addEventListener('touchmove', function(e) {
 						// 	e.preventDefault();
 						// }, false);
- 						document.addEventListener('touchmove', function(e) {
-						 	e.preventDefault();
-						 }, false);
- 						var model=document.getElementById('model')
-						// document.addEventListener('DOMContentLoaded', function() {
-						// 	setTimeout(loaded, 200);
-						// }, false);
+ 						// var model=document.getElementById('model')
+						document.addEventListener('DOMContentLoaded', function() {
+							setTimeout(loaded, 200);
+						}, false);
 
-						model.addEventListener( 'touchmove', function( e ){
+						document.addEventListener( 'touchmove', function( e ){
 					        e.returnValue = true;
 					    }, false );
 					</script>
