@@ -3,9 +3,9 @@
 .por{position: relative;}
 
 body,html{width: 100%;height: 100%;}
-/*body{
-	position: fixed;
-}*/
+body{
+	overflow: hidden;
+}
 /*遮罩层*/
 .mask{
 		    width: 100%;
