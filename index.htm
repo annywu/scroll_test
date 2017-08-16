@@ -27,7 +27,7 @@
 
 		<!-- 引入的index2.css -->
 		<link rel="stylesheet" href="style/index2.css">
-		<!--8.15引入saoma.css-->
+		<!--8.15引入saoma.css 为弹出框样式-->
 		<link rel="stylesheet" href="style/saoma.css" />
 		<script src="scripts/layui/layer.js" tppabs="http://m.lenwin.cn/scripts/layui/layer.js"></script>
 		<script type="text/javascript">
@@ -907,10 +907,9 @@
 				</script>
 			</div>
 		</form>
-
+		<!-- 遮罩层 -->
 		<div class="mask"></div>
 		<!--扫码弹出层-->
-
 		<div id="modal" class="modal saoma main">
 			<div>
 				<div id="saoma_cont" style="overflow-y: scroll;">
@@ -1036,23 +1035,21 @@
 						}
 					</style>
 					<script type="text/javascript">
+						//阻止移动端默认滑动
  						document.addEventListener('touchmove', function(e) {
 						 	e.preventDefault();
 						 }, false);
+ 						// scroll初始化
 						var myScroll;
 						function loaded() {
 							myScroll = new iScroll('scrollc');
 							myScroll
 						}
-						// var home=document.getElementById('home')
-						// home.addEventListener('touchmove', function(e) {
-						// 	e.preventDefault();
-						// }, false);
- 						// var model=document.getElementById('model')
+
 						document.addEventListener('DOMContentLoaded', function() {
 							setTimeout(loaded, 200);
 						}, false);
-
+						//移动端恢复移动
 						document.addEventListener( 'touchmove', function( e ){
 					        e.returnValue = true;
 					    }, false );
