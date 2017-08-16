@@ -1,0 +1,165 @@
+.clearfix{zoom:1;}
+.clearfix:after{content:""; display:block; visibility:hidden; height:0; clear:both;}
+i,em{font-style: normal;}
+
+
+.home_banner.swiper-container {
+        width: 100%;
+        height: 100%;
+        
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    .swiper-pagination{
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      justify-content:center;
+      width: 100%;
+      bottom: .1706rem;
+    }
+    .swiper-pagination .swiper-pagination-switch{
+      width: .0853rem;
+      height: .0853rem;
+      margin-right:.1706rem; 
+      background: transparent;
+      border:1px solid #fff;
+      float: left;
+      border-radius: 50%;
+    }
+    .swiper-pagination .swiper-active-switch{
+      background: #fff;
+    }
+.home_banner .swiper-slide img{
+  width: 100%;
+}
+
+
+.i_brand_buy{
+	padding-top:.22rem;
+	padding-left:.27rem;
+	padding-right: .27rem;
+}
+
+.i_brand_buy li{
+	
+	float: left;
+}
+.i_brand_buy li:nth-of-type(1){float: none;width: 100%;padding-bottom:.154rem; }
+.i_brand_buy li a{display: block;}
+.i_brand_buy li img{width: 100%;}
+.i_brand_buy li:nth-of-type(2){
+	width: 50%;padding-right: .056rem;
+}
+.i_brand_buy li:nth-of-type(3){
+	width: 50%;padding-left: .056rem;
+}
+
+/*主题推荐*/
+.block_title{
+	text-align: center;
+}
+.block_title img{
+	width:1.82542rem;
+	height: .5118rem;
+}
+.theme_banner{
+	padding-left:.27rem;
+	padding-right: .27rem;
+}
+.theme_banner li{
+	width: 2.86rem;
+	float: left;
+	padding-bottom:.13648rem ;
+	box-sizing: content-box;
+}
+.theme_banner li:nth-of-type(odd){
+	padding-right:.13648rem ;
+}
+.theme_banner li a{
+	float:left;
+}
+.theme_banner li a img{
+	width:100%;
+	
+}
+/*妈咪清单*/
+.mami_list_banner{padding:0.156rem 0;}
+.mami_list_banner img{width: 100%;}
+
+
+
+.swiper-container {
+        width: 100%;
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+.mami_list .swiper-slide{
+  align-items:flex-start!important;
+}
+  a.mami_list_goods{
+  	display:block; 
+  	width: 100%;
+  }
+  a.mami_list_goods img{
+  	display: block; width: 100%;
+  }
+
+  a.mami_list_goods .mami_list_title{
+  	width: 2rem;
+    font-size:0.204rem;
+	padding: 0 .2rem;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	color:#5c5c5c;
+  }
+  a.mami_list_goods span{color:#ff5188;font-size: 0.1706rem;}
+  
+/*附近门店*/
+.near img{width: 100%;}
+
+
+
+
+
+
+
+
+
+
+

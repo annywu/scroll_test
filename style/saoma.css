@@ -1,0 +1,112 @@
+.clearfix{zoom:1;}
+.clearfix:after{content:""; display:block; visibility:hidden; height:0; clear:both;}
+.por{position: relative;}
+
+body,html{width: 100%;height: 100%;}
+/*body{
+	position: fixed;
+}*/
+/*遮罩层*/
+.mask{
+		    width: 100%;
+		    height: 100%;
+		    background: rgba(0, 0, 0, 0.6);
+		    position: fixed;
+		    top: 0;
+		    left: 0;
+		    right: 0;
+		    bottom: 0;
+		    z-index: 99;
+		    display: none;
+		
+	}
+.modal {
+  display: none;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed; top:3.412rem ; right: 0; bottom: 0; left: 0;z-index: 1000;
+}
+#scroller{
+	z-index: 88;
+}
+#saoma_cont{
+	overflow-y: scroll;
+}
+.saoma header{
+	line-height: .69946rem;
+	text-align: center;
+	border-bottom: 1px solid #E1E1E1;
+	position: fixed;
+	width: 100%;
+	max-width: 640px;
+	background: #fff;
+}
+.saoma header a{
+	display: inline-block;
+	width:.2559rem ;
+	height: .13648rem;
+	background: url(../images/icon/arrow_bottom.png) no-repeat center;
+	background-size:contain ;
+}
+.saoma_list{
+	padding-left:.3412rem ;
+	padding-bottom: .3412rem;
+	/*margin-bottom: .853rem;*/
+	background: #fff;
+}
+.saoma_list li{
+	padding-top: .3412rem;
+}
+   /*右边列表样式*/
+	    .goods_img{
+	    	display: block;
+	    	width: 1.706rem;
+	    }
+	    .goods_img img{
+	    	width: 100%;
+	    }
+	.goods_cont{
+		padding:0 0.469rem 0 .469rem;
+	}
+	.goods_cont p{width:3.412rem;font-size:.2559rem;line-height: .39238rem;}
+	.goods_cont p a{color:#000;letter-spacing: 1px;}
+	.goods_cont .huiyuan{
+		padding-top: .3753rem;
+		font-size:.2047rem;
+		color: #e51856;
+	}
+	.goods_cont .huiyuan span{
+		font-size:.2559rem ;
+	}
+	.goods_cont .normal_price{
+		color: #666;
+		font-size: .1706rem;
+		line-height: .28rem;
+	}
+	.icon_car2{
+		position: absolute;
+		right: .2559rem;
+		bottom: 0;
+		width: .3412rem;
+		height:.3412rem ;
+		background: url(../images/icon/icon_car2.png) no-repeat center;
+		background-size:contain ;
+	}
+	
+.saoma footer{
+	position: fixed;
+	bottom: 0;
+	height: .853rem;
+	line-height: .853rem;
+	
+	background: #E51B56;
+	border-top: none;
+	
+}
+.saoma footer a{
+	display: block;
+	color: #fff;
+	font-size: .22178rem;
+	text-align: center;
+}
+
+

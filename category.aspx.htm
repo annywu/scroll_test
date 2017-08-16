@@ -1,0 +1,218 @@
+<html><head><meta http-equiv=Content-Type content='text/html; charset=utf-8'></head>
+
+<!DOCTYPE html>
+<html>
+<head id="Head1"><title>
+	分类查看
+</title>
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<link href="style/common.css" tppabs="http://m.lenwin.cn/style/common.css" rel="stylesheet" type="text/css" />
+<link href="style/shop.css" tppabs="http://m.lenwin.cn/style/shop.css" rel="stylesheet" type="text/css" />
+<link href="style/category.css-233.css" tppabs="http://m.lenwin.cn/style/category.css?233" rel="stylesheet" type="text/css" />
+    <script src="scripts/jquery/jquery-1.11.2.min.js" tppabs="http://m.lenwin.cn/scripts/jquery/jquery-1.11.2.min.js"></script>
+    <script src="scripts/base.js" tppabs="http://m.lenwin.cn/scripts/base.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(".leftnav_scroll li").click(function () {
+                $(".leftnav_scroll li").removeClass("on");
+                $(this).addClass("on");
+            })
+            load_big_category();
+            
+        })
+        function load_big_category() {
+            $.ajax({
+                url: "category.aspx-action=get_big_category.htm"/*tpa=http://m.lenwin.cn/category.aspx?action=get_big_category*/,
+                type: "post",
+                data: { parent_id: 0 },
+                dataType: "json",
+                success: function (data) {
+                    //alert(data.length);
+                    //$("#big_category")
+                    var html = "";
+                    $(data).each(function () {
+                        html += '<li cate-id="'+this.id+'">'+this.cate_name+'</li>';
+                    })
+                    $("#big_category").html(html);
+                    $("#big_category li").click(function () {
+                        $("#big_category li").removeClass("on");
+                        $(this).addClass("on");
+                        load_small_category($(this).attr("cate-id"));
+                    })
+                    $("#big_category li:eq(0)").trigger("click");
+                }
+            })
+        }
+        function load_small_category(parent_id) {
+            $.ajax({
+                url: "category.aspx-action=get_small_category.htm"/*tpa=http://m.lenwin.cn/category.aspx?action=get_small_category*/,
+                type: "post",
+                data: { parent_id: parent_id },
+                dataType: "json",
+                success: function (data) {
+                    //$("#big_category")
+                    var html = "";
+                    $(data).each(function () {
+                        html += '<div class="big_nav" id="link_2">';
+                        html += '<span class="l">' + this.cate_name + '</span> <a class="r" href="pro_list.aspx?category_id=' + this.id + '">查看更多>></a>';
+                        html += '<div class="clear"></div>';
+                        html += '</div><div class="clear"></div>';
+                        html += '<div class="small_nav_wrap">';
+                        html += '<ul class="small_nav_ul">';
+                        $(this.itemlist).each(function () { 
+                        html += '<li>';
+                        html += '<div class="imgbox">';
+                        html += '<a href="pro_list.aspx?category_id='+this.id+'"><img src="'+this.img_url+'" onerror="this.src=\'/images/no_img.jpg\';" height="100%" /></a></div>';
+                        html += '<p><a href="pro_list.aspx?category_id=' + this.id + '">';
+                        html += this.cate_name+'</a></p>';
+                        html += '</li>';
+                        })
+                        html += '</ul><div class="clear"></div></div>';
+                    })
+                    $("#small_category").html(html);
+                }
+            })
+        }
+    </script>
+</head>
+<body style="background: #F3F5F7;">
+    <form method="post" action="category.aspx-__VIEWSTATE=-wEPDwUJMzg0NzI2MTUyZGTrv4UA7r2wVB-VSrlkChyt8mdMK2ErIzLLCEACpb4Qqg==&__VIEWSTATEGENERATOR=A0DDA87A.htm" tppabs="http://m.lenwin.cn/category.aspx?__VIEWSTATE=/wEPDwUJMzg0NzI2MTUyZGTrv4UA7r2wVB/VSrlkChyt8mdMK2ErIzLLCEACpb4Qqg==&__VIEWSTATEGENERATOR=A0DDA87A" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJMzg0NzI2MTUyZGTrv4UA7r2wVB/VSrlkChyt8mdMK2ErIzLLCEACpb4Qqg==" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="A0DDA87A" />
+</div>
+    <div class="main">
+        <div class="cate_header">
+            <span class="l" onclick="history.go(-1);"></span>
+            <div class="c">
+                <a class="s_inner" href="search.aspx.htm" tppabs="http://m.lenwin.cn/search.aspx">在商城内搜索</a></div>
+            <div class="r">
+            </div>
+        </div>
+        <!--左边导航条-->
+        <div class="leftnav_scroll">
+            <ul id="big_category">
+               <li><a href="#">宝宝奶粉</a></li>
+               <li><a href="#">宝宝奶粉</a></li>
+               <li><a href="#">宝宝奶粉</a></li>
+               <li><a href="#">宝宝奶粉</a></li>
+               <li><a href="#">宝宝奶粉</a></li>
+               <li><a href="#">宝宝奶粉</a></li>
+               <li><a href="#">宝宝奶粉</a></li>
+               <li><a href="#">宝宝奶粉</a></li>
+               <li><a href="#">宝宝奶粉</a></li>
+               <li><a href="#">宝宝奶粉</a></li>
+               <li><a href="#">宝宝奶粉</a></li>
+               <li><a href="#">宝宝奶粉</a></li>
+               <li><a href="#">宝宝奶粉</a></li>
+            </ul>
+        </div>
+        <div class="rightnav_scroll">
+           <div class="inner"> 
+	           	<div class="ad">
+	                <img src="images/cate_img_demo1.png" tppabs="http://m.lenwin.cn/images/cate_img_demo1.png" width="100%" />
+	           	</div>
+	            <div id="small_category" class="small_category">
+	            	<ul class="">
+	            		<li class="por clearfix">
+	            			<a href="#" class="fl goods_img">
+	            				<img src="upload/201708/15/201708151.png" alt="" />
+	            			</a>
+	            			<div class="goods_cont fl">
+	            				<p><a href="#">港版惠氏S-26金装罐奶粉2段</a></p>
+	            				<div class="huiyuan">
+	            					会员价&nbsp;￥<span>78</span>
+	            				</div>
+	            				<div class="normal_price">零售价<span>￥178</span></div>
+	            			</div>
+	            			<a href="javascript:;" class="icon_car2"></a>
+	            		</li>
+	            		<li class="por clearfix">
+	            			<a href="#" class="fl goods_img">
+	            				<img src="upload/201708/15/201708151.png" alt="" />
+	            			</a>
+	            			<div class="goods_cont fl">
+	            				<p><a href="#">港版惠氏S-26金装罐奶粉2段</a></p>
+	            				<div class="huiyuan">
+	            					会员价￥<span>78</span>
+	            				</div>
+	            				<div class="normal_price">零售价<span>￥178</span></div>
+	            			</div>
+	            			<a href="javascript:;" class="icon_car2"></a>
+	            		</li>
+	            		<li class="por clearfix">
+	            			<a href="#" class="fl goods_img">
+	            				<img src="upload/201708/15/201708151.png" alt="" />
+	            			</a>
+	            			<div class="goods_cont fl">
+	            				<p><a href="#">港版惠氏S-26金装罐奶粉2段</a></p>
+	            				<div class="huiyuan">
+	            					会员价￥<span>78</span>
+	            				</div>
+	            				<div class="normal_price">零售价<span>￥178</span></div>
+	            			</div>
+	            			<a href="javascript:;" class="icon_car2"></a>
+	            		</li>
+	            		<li class="por clearfix">
+	            			<a href="#" class="fl goods_img">
+	            				<img src="upload/201708/15/201708151.png" alt="" />
+	            			</a>
+	            			<div class="goods_cont fl">
+	            				<p><a href="#">港版惠氏S-26金装罐奶粉2段</a></p>
+	            				<div class="huiyuan">
+	            					会员价￥<span>78</span>
+	            				</div>
+	            				<div class="normal_price">零售价<span>￥178</span></div>
+	            			</div>
+	            			<a href="javascript:;" class="icon_car2"></a>
+	            		</li>
+	            	</ul>
+            	</div>
+            </div>
+        </div>
+        
+<div style="height: 0.98rem; overflow: hidden; clear: both; width: 100%;">
+</div>
+<footer>
+        <ul id="footer_nav">
+        <li class="f_nav_home" onclick="window.location.href='index.aspx.htm'/*tpa=http://m.lenwin.cn/index.aspx*/;"></li>
+        <li class="f_nav_cate" onclick="window.location.href='category.aspx.htm'/*tpa=http://m.lenwin.cn/category.aspx*/;"></li>
+        <li class="f_nav_near" onclick="window.location.href='near_shop.aspx.htm'/*tpa=http://m.lenwin.cn/near_shop.aspx*/;"></li>
+        <li class="f_nav_cart" onclick="window.location.href='carts.aspx.htm'/*tpa=http://m.lenwin.cn/carts.aspx*/;"><i id="f_carts_num">28</i></li>
+        <li class="f_nav_user" onclick="window.location.href='usercenter/index.aspx.htm'/*tpa=http://m.lenwin.cn/usercenter/index.aspx*/;"></li>
+        </ul>
+</footer>
+<script type="text/javascript">
+    $(function () {
+        
+        var _domain = document.domain.toLowerCase() + "/";
+            var _url = window.location.href.toLowerCase();
+            if (_domain.indexOf("localhost") > -1) {
+                _domain = "";
+            } 
+            if (_url.indexOf(_domain + "index.aspx") > -1) {
+                $(".f_nav_home").addClass("f_nav_home_on").removeClass("f_nav_home");
+            }
+            else if (_url.indexOf(_domain + "category.aspx") > -1) {
+                $(".f_nav_cate").addClass("f_nav_cate_on").removeClass("f_nav_cate");
+            }
+            else if (_url.indexOf(_domain + "near_shop.aspx") > -1) {
+                $(".f_nav_near").addClass("f_nav_near_on").removeClass("f_nav_near");
+            }
+            else if (_url.indexOf(_domain + "usercenter/index.aspx") > -1 || _url.indexOf("usercenter/mch/") > -1) {
+                $(".f_nav_user").addClass("f_nav_user_on").removeClass("f_nav_user");
+            }
+            else if (_url.indexOf(_domain + "carts.aspx") > -1) {
+                $(".f_nav_cart").addClass("f_nav_cart_on").removeClass("f_nav_cart");
+            }
+    })
+</script>
+
+    </div>
+    </form>
+</body>
+</html>
